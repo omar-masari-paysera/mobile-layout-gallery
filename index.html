@@ -1,84 +1,115 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paysera Mobile — Screen Gallery</title>
+<title>Paysera Mobile — Interactive Prototypes</title>
 <style>
-:root{--bg:#0b1020;--card:#fff;--muted:#6b7280;--ink:#0f172a;--line:#e6e8ef}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,Inter,Segoe UI,Roboto,Arial,sans-serif;background:#f4f5f8;color:var(--ink)}
-header{background:linear-gradient(135deg,#000099,#0b1020);color:#fff;padding:40px 24px 32px}
+:root{--muted:#6b7280;--ink:#0f172a;--line:#e6e8ef;--brand:#000099}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,Inter,Segoe UI,Roboto,Arial,sans-serif;background:#f4f5f8;color:var(--ink)}
+header{background:linear-gradient(135deg,#000099,#0b1020);color:#fff;padding:40px 24px 28px}
 header h1{margin:0 0 6px;font-size:26px;font-weight:800;letter-spacing:-.02em}
-header p{margin:0;opacity:.8;font-size:15px;max-width:720px}
-.meta{margin-top:14px;font-size:13px;opacity:.7}
-.wrap{max-width:1500px;margin:0 auto;padding:28px 24px 60px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #0b102015}
-.cap{padding:10px 14px;font-size:13px;font-weight:700;display:flex;gap:6px;align-items:baseline}
-.cap .n{color:#000099;font-weight:800}.cap .t{color:var(--muted);font-weight:500}
-a.shot{display:block;border-top:1px solid var(--line)}
-a.shot img{width:100%;display:block;aspect-ratio:375/812;object-fit:cover;object-position:top}
-footer{color:var(--muted);font-size:13px;text-align:center;padding:24px}
+header p{margin:0;opacity:.85;font-size:15px;max-width:780px}
+.pill{display:inline-block;margin-top:12px;background:#ffffff22;border:1px solid #ffffff33;color:#fff;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px}
+nav{position:sticky;top:0;z-index:5;background:#fffffff2;backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 24px;display:flex;flex-wrap:wrap;gap:8px}
+nav a{font-size:13px;font-weight:600;color:#334155;text-decoration:none;padding:5px 11px;border:1px solid var(--line);border-radius:999px}
+nav a:hover{border-color:var(--brand);color:var(--brand)}
+.wrap{max-width:1500px;margin:0 auto;padding:8px 24px 64px}
+h2.sec{font-size:18px;font-weight:800;margin:34px 0 4px;letter-spacing:-.01em;scroll-margin-top:60px}
+h2.sec span{color:var(--muted);font-weight:500;font-size:14px;margin-left:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-top:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #0b102015;border-color:#c7cbe0}
+.cap{padding:10px 14px;font-size:13px;display:flex;gap:6px;align-items:baseline}
+.cap .n{color:var(--brand);font-weight:800}.cap .t{color:var(--muted);font-weight:500}
+.shot{position:relative;border-top:1px solid var(--line)}
+.shot img{width:100%;display:block;aspect-ratio:375/812;object-fit:cover;object-position:top}
+.shot::after{content:"▶ Open live";position:absolute;bottom:10px;right:10px;background:#000099e6;color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;opacity:0;transition:opacity .15s}
+.card:hover .shot::after{opacity:1}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:26px}
 </style></head><body>
-<header>
-<h1>Paysera Mobile — Screen Gallery</h1>
+<header><h1>Paysera Mobile — Interactive Prototypes</h1>
 <p>55 example mobile screens (375×812) built by composing <code>@paysera/ui</code> web components into a hand-built mobile shell, grounded in real Paysera designs (UIUX-390).</p>
-<div class="meta">Static mockups · click any screen to open full-size</div>
-</header>
-<div class="wrap"><div class="grid">
-<div class="card"><div class="cap"><span class="n">gen1</span><span class="t"></span></div><a class="shot" href="screens/gen1.png" target="_blank"><img loading="lazy" src="screens/gen1.png" alt="gen1 "></a></div>
-<div class="card"><div class="cap"><span class="n">gen2</span><span class="t">Card settings</span></div><a class="shot" href="screens/gen2.png" target="_blank"><img loading="lazy" src="screens/gen2.png" alt="gen2 Card settings"></a></div>
-<div class="card"><div class="cap"><span class="n">gen3</span><span class="t">Transaction detail</span></div><a class="shot" href="screens/gen3.png" target="_blank"><img loading="lazy" src="screens/gen3.png" alt="gen3 Transaction detail"></a></div>
-<div class="card"><div class="cap"><span class="n">gen4</span><span class="t">Add beneficiary</span></div><a class="shot" href="screens/gen4.png" target="_blank"><img loading="lazy" src="screens/gen4.png" alt="gen4 Add beneficiary"></a></div>
-<div class="card"><div class="cap"><span class="n">gen5</span><span class="t">Choose account (sheet)</span></div><a class="shot" href="screens/gen5.png" target="_blank"><img loading="lazy" src="screens/gen5.png" alt="gen5 Choose account (sheet)"></a></div>
-<div class="card"><div class="cap"><span class="n">gen6</span><span class="t">Deposit offers</span></div><a class="shot" href="screens/gen6.png" target="_blank"><img loading="lazy" src="screens/gen6.png" alt="gen6 Deposit offers"></a></div>
-<div class="card"><div class="cap"><span class="n">gen7</span><span class="t">Wallet home</span></div><a class="shot" href="screens/gen7.png" target="_blank"><img loading="lazy" src="screens/gen7.png" alt="gen7 Wallet home"></a></div>
-<div class="card"><div class="cap"><span class="n">gen8</span><span class="t">Cards</span></div><a class="shot" href="screens/gen8.png" target="_blank"><img loading="lazy" src="screens/gen8.png" alt="gen8 Cards"></a></div>
-<div class="card"><div class="cap"><span class="n">gen9</span><span class="t">Transfers</span></div><a class="shot" href="screens/gen9.png" target="_blank"><img loading="lazy" src="screens/gen9.png" alt="gen9 Transfers"></a></div>
-<div class="card"><div class="cap"><span class="n">gen10</span><span class="t">Top up hub</span></div><a class="shot" href="screens/gen10.png" target="_blank"><img loading="lazy" src="screens/gen10.png" alt="gen10 Top up hub"></a></div>
-<div class="card"><div class="cap"><span class="n">gen11</span><span class="t">More / services</span></div><a class="shot" href="screens/gen11.png" target="_blank"><img loading="lazy" src="screens/gen11.png" alt="gen11 More / services"></a></div>
-<div class="card"><div class="cap"><span class="n">gen12</span><span class="t">New transfer</span></div><a class="shot" href="screens/gen12.png" target="_blank"><img loading="lazy" src="screens/gen12.png" alt="gen12 New transfer"></a></div>
-<div class="card"><div class="cap"><span class="n">gen13</span><span class="t">Transfer review</span></div><a class="shot" href="screens/gen13.png" target="_blank"><img loading="lazy" src="screens/gen13.png" alt="gen13 Transfer review"></a></div>
-<div class="card"><div class="cap"><span class="n">gen14</span><span class="t">Transfer success</span></div><a class="shot" href="screens/gen14.png" target="_blank"><img loading="lazy" src="screens/gen14.png" alt="gen14 Transfer success"></a></div>
-<div class="card"><div class="cap"><span class="n">gen15</span><span class="t">Transfer failed</span></div><a class="shot" href="screens/gen15.png" target="_blank"><img loading="lazy" src="screens/gen15.png" alt="gen15 Transfer failed"></a></div>
-<div class="card"><div class="cap"><span class="n">gen16</span><span class="t">Card details</span></div><a class="shot" href="screens/gen16.png" target="_blank"><img loading="lazy" src="screens/gen16.png" alt="gen16 Card details"></a></div>
-<div class="card"><div class="cap"><span class="n">gen17</span><span class="t">Choose card type</span></div><a class="shot" href="screens/gen17.png" target="_blank"><img loading="lazy" src="screens/gen17.png" alt="gen17 Choose card type"></a></div>
-<div class="card"><div class="cap"><span class="n">gen18</span><span class="t">Choose design</span></div><a class="shot" href="screens/gen18.png" target="_blank"><img loading="lazy" src="screens/gen18.png" alt="gen18 Choose design"></a></div>
-<div class="card"><div class="cap"><span class="n">gen19</span><span class="t">Cardholder</span></div><a class="shot" href="screens/gen19.png" target="_blank"><img loading="lazy" src="screens/gen19.png" alt="gen19 Cardholder"></a></div>
-<div class="card"><div class="cap"><span class="n">gen20</span><span class="t">Card order review</span></div><a class="shot" href="screens/gen20.png" target="_blank"><img loading="lazy" src="screens/gen20.png" alt="gen20 Card order review"></a></div>
-<div class="card"><div class="cap"><span class="n">gen21</span><span class="t">Daily limits</span></div><a class="shot" href="screens/gen21.png" target="_blank"><img loading="lazy" src="screens/gen21.png" alt="gen21 Daily limits"></a></div>
-<div class="card"><div class="cap"><span class="n">gen22</span><span class="t">Edit limit (keypad)</span></div><a class="shot" href="screens/gen22.png" target="_blank"><img loading="lazy" src="screens/gen22.png" alt="gen22 Edit limit (keypad)"></a></div>
-<div class="card"><div class="cap"><span class="n">gen23</span><span class="t">Select account</span></div><a class="shot" href="screens/gen23.png" target="_blank"><img loading="lazy" src="screens/gen23.png" alt="gen23 Select account"></a></div>
-<div class="card"><div class="cap"><span class="n">gen24</span><span class="t">Account details</span></div><a class="shot" href="screens/gen24.png" target="_blank"><img loading="lazy" src="screens/gen24.png" alt="gen24 Account details"></a></div>
-<div class="card"><div class="cap"><span class="n">gen25</span><span class="t">Settings</span></div><a class="shot" href="screens/gen25.png" target="_blank"><img loading="lazy" src="screens/gen25.png" alt="gen25 Settings"></a></div>
-<div class="card"><div class="cap"><span class="n">gen26</span><span class="t">App language</span></div><a class="shot" href="screens/gen26.png" target="_blank"><img loading="lazy" src="screens/gen26.png" alt="gen26 App language"></a></div>
-<div class="card"><div class="cap"><span class="n">gen27</span><span class="t">Notifications</span></div><a class="shot" href="screens/gen27.png" target="_blank"><img loading="lazy" src="screens/gen27.png" alt="gen27 Notifications"></a></div>
-<div class="card"><div class="cap"><span class="n">gen28</span><span class="t">Security</span></div><a class="shot" href="screens/gen28.png" target="_blank"><img loading="lazy" src="screens/gen28.png" alt="gen28 Security"></a></div>
-<div class="card"><div class="cap"><span class="n">gen29</span><span class="t">Personal info</span></div><a class="shot" href="screens/gen29.png" target="_blank"><img loading="lazy" src="screens/gen29.png" alt="gen29 Personal info"></a></div>
-<div class="card"><div class="cap"><span class="n">gen30</span><span class="t">Login</span></div><a class="shot" href="screens/gen30.png" target="_blank"><img loading="lazy" src="screens/gen30.png" alt="gen30 Login"></a></div>
-<div class="card"><div class="cap"><span class="n">gen31</span><span class="t">Create account</span></div><a class="shot" href="screens/gen31.png" target="_blank"><img loading="lazy" src="screens/gen31.png" alt="gen31 Create account"></a></div>
-<div class="card"><div class="cap"><span class="n">gen32</span><span class="t">PIN entry</span></div><a class="shot" href="screens/gen32.png" target="_blank"><img loading="lazy" src="screens/gen32.png" alt="gen32 PIN entry"></a></div>
-<div class="card"><div class="cap"><span class="n">gen33</span><span class="t">OTP confirm</span></div><a class="shot" href="screens/gen33.png" target="_blank"><img loading="lazy" src="screens/gen33.png" alt="gen33 OTP confirm"></a></div>
-<div class="card"><div class="cap"><span class="n">gen34</span><span class="t">Welcome</span></div><a class="shot" href="screens/gen34.png" target="_blank"><img loading="lazy" src="screens/gen34.png" alt="gen34 Welcome"></a></div>
-<div class="card"><div class="cap"><span class="n">gen35</span><span class="t">Consent request</span></div><a class="shot" href="screens/gen35.png" target="_blank"><img loading="lazy" src="screens/gen35.png" alt="gen35 Consent request"></a></div>
-<div class="card"><div class="cap"><span class="n">gen36</span><span class="t">Feature enroll</span></div><a class="shot" href="screens/gen36.png" target="_blank"><img loading="lazy" src="screens/gen36.png" alt="gen36 Feature enroll"></a></div>
-<div class="card"><div class="cap"><span class="n">gen37</span><span class="t">Deposit details</span></div><a class="shot" href="screens/gen37.png" target="_blank"><img loading="lazy" src="screens/gen37.png" alt="gen37 Deposit details"></a></div>
-<div class="card"><div class="cap"><span class="n">gen38</span><span class="t">My loans</span></div><a class="shot" href="screens/gen38.png" target="_blank"><img loading="lazy" src="screens/gen38.png" alt="gen38 My loans"></a></div>
-<div class="card"><div class="cap"><span class="n">gen39</span><span class="t">Loan calculator</span></div><a class="shot" href="screens/gen39.png" target="_blank"><img loading="lazy" src="screens/gen39.png" alt="gen39 Loan calculator"></a></div>
-<div class="card"><div class="cap"><span class="n">gen40</span><span class="t">Investment</span></div><a class="shot" href="screens/gen40.png" target="_blank"><img loading="lazy" src="screens/gen40.png" alt="gen40 Investment"></a></div>
-<div class="card"><div class="cap"><span class="n">gen41</span><span class="t">Solvency</span></div><a class="shot" href="screens/gen41.png" target="_blank"><img loading="lazy" src="screens/gen41.png" alt="gen41 Solvency"></a></div>
-<div class="card"><div class="cap"><span class="n">gen42</span><span class="t">Support chat list</span></div><a class="shot" href="screens/gen42.png" target="_blank"><img loading="lazy" src="screens/gen42.png" alt="gen42 Support chat list"></a></div>
-<div class="card"><div class="cap"><span class="n">gen43</span><span class="t">Chat</span></div><a class="shot" href="screens/gen43.png" target="_blank"><img loading="lazy" src="screens/gen43.png" alt="gen43 Chat"></a></div>
-<div class="card"><div class="cap"><span class="n">gen44</span><span class="t">Chat empty</span></div><a class="shot" href="screens/gen44.png" target="_blank"><img loading="lazy" src="screens/gen44.png" alt="gen44 Chat empty"></a></div>
-<div class="card"><div class="cap"><span class="n">gen45</span><span class="t">Search</span></div><a class="shot" href="screens/gen45.png" target="_blank"><img loading="lazy" src="screens/gen45.png" alt="gen45 Search"></a></div>
-<div class="card"><div class="cap"><span class="n">gen46</span><span class="t">Filter sheet</span></div><a class="shot" href="screens/gen46.png" target="_blank"><img loading="lazy" src="screens/gen46.png" alt="gen46 Filter sheet"></a></div>
-<div class="card"><div class="cap"><span class="n">gen47</span><span class="t">Advanced filter</span></div><a class="shot" href="screens/gen47.png" target="_blank"><img loading="lazy" src="screens/gen47.png" alt="gen47 Advanced filter"></a></div>
-<div class="card"><div class="cap"><span class="n">gen48</span><span class="t">No results</span></div><a class="shot" href="screens/gen48.png" target="_blank"><img loading="lazy" src="screens/gen48.png" alt="gen48 No results"></a></div>
-<div class="card"><div class="cap"><span class="n">gen49</span><span class="t">Scan QR</span></div><a class="shot" href="screens/gen49.png" target="_blank"><img loading="lazy" src="screens/gen49.png" alt="gen49 Scan QR"></a></div>
-<div class="card"><div class="cap"><span class="n">gen50</span><span class="t">My QR</span></div><a class="shot" href="screens/gen50.png" target="_blank"><img loading="lazy" src="screens/gen50.png" alt="gen50 My QR"></a></div>
-<div class="card"><div class="cap"><span class="n">gen51</span><span class="t">Top up point</span></div><a class="shot" href="screens/gen51.png" target="_blank"><img loading="lazy" src="screens/gen51.png" alt="gen51 Top up point"></a></div>
-<div class="card"><div class="cap"><span class="n">gen52</span><span class="t">Currency exchange</span></div><a class="shot" href="screens/gen52.png" target="_blank"><img loading="lazy" src="screens/gen52.png" alt="gen52 Currency exchange"></a></div>
-<div class="card"><div class="cap"><span class="n">gen53</span><span class="t">Amount entry</span></div><a class="shot" href="screens/gen53.png" target="_blank"><img loading="lazy" src="screens/gen53.png" alt="gen53 Amount entry"></a></div>
-<div class="card"><div class="cap"><span class="n">gen54</span><span class="t">Between accounts</span></div><a class="shot" href="screens/gen54.png" target="_blank"><img loading="lazy" src="screens/gen54.png" alt="gen54 Between accounts"></a></div>
-<div class="card"><div class="cap"><span class="n">gen55</span><span class="t">Get statement</span></div><a class="shot" href="screens/gen55.png" target="_blank"><img loading="lazy" src="screens/gen55.png" alt="gen55 Get statement"></a></div>
-</div></div>
-<footer>Internal design mockups · Paysera · generated preview</footer>
-</body></html>
+<span class="pill">▶ Click any screen to open the live, interactive version — scroll, tap, focus a field to raise the keyboard</span></header>
+<nav>
+<a href="#home-root-tabs">Home & root tabs</a>
+<a href="#payments-transfers">Payments & transfers</a>
+<a href="#cards">Cards</a>
+<a href="#accounts-settings">Accounts & settings</a>
+<a href="#auth-onboarding">Auth & onboarding</a>
+<a href="#deposits-loans-investing">Deposits, loans & investing</a>
+<a href="#chat-support">Chat & support</a>
+<a href="#search-filters">Search & filters</a>
+<a href="#codes-statements">Codes & statements</a>
+</nav><div class="wrap">
+<h2 class="sec" id="home-root-tabs">Home & root tabs <span>5 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen6"><div class="cap"><span class="n">gen6</span><span class="t">Wallet home</span></div><div class="shot"><img loading="lazy" src="screens/gen6.png" alt="gen6 Wallet home"></div></a>
+<a class="card" href="baseline.html?screen=gen7"><div class="cap"><span class="n">gen7</span><span class="t">Cards</span></div><div class="shot"><img loading="lazy" src="screens/gen7.png" alt="gen7 Cards"></div></a>
+<a class="card" href="baseline.html?screen=gen8"><div class="cap"><span class="n">gen8</span><span class="t">Transfers</span></div><div class="shot"><img loading="lazy" src="screens/gen8.png" alt="gen8 Transfers"></div></a>
+<a class="card" href="baseline.html?screen=gen9"><div class="cap"><span class="n">gen9</span><span class="t">Top up hub</span></div><div class="shot"><img loading="lazy" src="screens/gen9.png" alt="gen9 Top up hub"></div></a>
+<a class="card" href="baseline.html?screen=gen10"><div class="cap"><span class="n">gen10</span><span class="t">More / services</span></div><div class="shot"><img loading="lazy" src="screens/gen10.png" alt="gen10 More / services"></div></a>
+</div>
+<h2 class="sec" id="payments-transfers">Payments & transfers <span>9 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen11"><div class="cap"><span class="n">gen11</span><span class="t">New transfer</span></div><div class="shot"><img loading="lazy" src="screens/gen11.png" alt="gen11 New transfer"></div></a>
+<a class="card" href="baseline.html?screen=gen12"><div class="cap"><span class="n">gen12</span><span class="t">Transfer review</span></div><div class="shot"><img loading="lazy" src="screens/gen12.png" alt="gen12 Transfer review"></div></a>
+<a class="card" href="baseline.html?screen=gen13"><div class="cap"><span class="n">gen13</span><span class="t">Transfer success</span></div><div class="shot"><img loading="lazy" src="screens/gen13.png" alt="gen13 Transfer success"></div></a>
+<a class="card" href="baseline.html?screen=gen14"><div class="cap"><span class="n">gen14</span><span class="t">Transfer failed</span></div><div class="shot"><img loading="lazy" src="screens/gen14.png" alt="gen14 Transfer failed"></div></a>
+<a class="card" href="baseline.html?screen=gen51"><div class="cap"><span class="n">gen51</span><span class="t">Currency exchange</span></div><div class="shot"><img loading="lazy" src="screens/gen51.png" alt="gen51 Currency exchange"></div></a>
+<a class="card" href="baseline.html?screen=gen52"><div class="cap"><span class="n">gen52</span><span class="t">Amount entry</span></div><div class="shot"><img loading="lazy" src="screens/gen52.png" alt="gen52 Amount entry"></div></a>
+<a class="card" href="baseline.html?screen=gen53"><div class="cap"><span class="n">gen53</span><span class="t">Between accounts</span></div><div class="shot"><img loading="lazy" src="screens/gen53.png" alt="gen53 Between accounts"></div></a>
+<a class="card" href="baseline.html?screen=gen2"><div class="cap"><span class="n">gen2</span><span class="t">Transaction detail</span></div><div class="shot"><img loading="lazy" src="screens/gen2.png" alt="gen2 Transaction detail"></div></a>
+<a class="card" href="baseline.html?screen=gen3"><div class="cap"><span class="n">gen3</span><span class="t">Add beneficiary</span></div><div class="shot"><img loading="lazy" src="screens/gen3.png" alt="gen3 Add beneficiary"></div></a>
+</div>
+<h2 class="sec" id="cards">Cards <span>8 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen1"><div class="cap"><span class="n">gen1</span><span class="t">Card settings</span></div><div class="shot"><img loading="lazy" src="screens/gen1.png" alt="gen1 Card settings"></div></a>
+<a class="card" href="baseline.html?screen=gen15"><div class="cap"><span class="n">gen15</span><span class="t">Card details</span></div><div class="shot"><img loading="lazy" src="screens/gen15.png" alt="gen15 Card details"></div></a>
+<a class="card" href="baseline.html?screen=gen16"><div class="cap"><span class="n">gen16</span><span class="t">Choose card type</span></div><div class="shot"><img loading="lazy" src="screens/gen16.png" alt="gen16 Choose card type"></div></a>
+<a class="card" href="baseline.html?screen=gen17"><div class="cap"><span class="n">gen17</span><span class="t">Choose design</span></div><div class="shot"><img loading="lazy" src="screens/gen17.png" alt="gen17 Choose design"></div></a>
+<a class="card" href="baseline.html?screen=gen18"><div class="cap"><span class="n">gen18</span><span class="t">Cardholder</span></div><div class="shot"><img loading="lazy" src="screens/gen18.png" alt="gen18 Cardholder"></div></a>
+<a class="card" href="baseline.html?screen=gen19"><div class="cap"><span class="n">gen19</span><span class="t">Card order review</span></div><div class="shot"><img loading="lazy" src="screens/gen19.png" alt="gen19 Card order review"></div></a>
+<a class="card" href="baseline.html?screen=gen20"><div class="cap"><span class="n">gen20</span><span class="t">Daily limits</span></div><div class="shot"><img loading="lazy" src="screens/gen20.png" alt="gen20 Daily limits"></div></a>
+<a class="card" href="baseline.html?screen=gen21"><div class="cap"><span class="n">gen21</span><span class="t">Edit limit (keypad)</span></div><div class="shot"><img loading="lazy" src="screens/gen21.png" alt="gen21 Edit limit (keypad)"></div></a>
+</div>
+<h2 class="sec" id="accounts-settings">Accounts & settings <span>8 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen4"><div class="cap"><span class="n">gen4</span><span class="t">Choose account (sheet)</span></div><div class="shot"><img loading="lazy" src="screens/gen4.png" alt="gen4 Choose account (sheet)"></div></a>
+<a class="card" href="baseline.html?screen=gen22"><div class="cap"><span class="n">gen22</span><span class="t">Select account</span></div><div class="shot"><img loading="lazy" src="screens/gen22.png" alt="gen22 Select account"></div></a>
+<a class="card" href="baseline.html?screen=gen23"><div class="cap"><span class="n">gen23</span><span class="t">Account details</span></div><div class="shot"><img loading="lazy" src="screens/gen23.png" alt="gen23 Account details"></div></a>
+<a class="card" href="baseline.html?screen=gen24"><div class="cap"><span class="n">gen24</span><span class="t">Settings</span></div><div class="shot"><img loading="lazy" src="screens/gen24.png" alt="gen24 Settings"></div></a>
+<a class="card" href="baseline.html?screen=gen25"><div class="cap"><span class="n">gen25</span><span class="t">App language</span></div><div class="shot"><img loading="lazy" src="screens/gen25.png" alt="gen25 App language"></div></a>
+<a class="card" href="baseline.html?screen=gen26"><div class="cap"><span class="n">gen26</span><span class="t">Notifications</span></div><div class="shot"><img loading="lazy" src="screens/gen26.png" alt="gen26 Notifications"></div></a>
+<a class="card" href="baseline.html?screen=gen27"><div class="cap"><span class="n">gen27</span><span class="t">Security</span></div><div class="shot"><img loading="lazy" src="screens/gen27.png" alt="gen27 Security"></div></a>
+<a class="card" href="baseline.html?screen=gen28"><div class="cap"><span class="n">gen28</span><span class="t">Personal info</span></div><div class="shot"><img loading="lazy" src="screens/gen28.png" alt="gen28 Personal info"></div></a>
+</div>
+<h2 class="sec" id="auth-onboarding">Auth & onboarding <span>7 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen29"><div class="cap"><span class="n">gen29</span><span class="t">Login</span></div><div class="shot"><img loading="lazy" src="screens/gen29.png" alt="gen29 Login"></div></a>
+<a class="card" href="baseline.html?screen=gen30"><div class="cap"><span class="n">gen30</span><span class="t">Create account</span></div><div class="shot"><img loading="lazy" src="screens/gen30.png" alt="gen30 Create account"></div></a>
+<a class="card" href="baseline.html?screen=gen31"><div class="cap"><span class="n">gen31</span><span class="t">PIN entry</span></div><div class="shot"><img loading="lazy" src="screens/gen31.png" alt="gen31 PIN entry"></div></a>
+<a class="card" href="baseline.html?screen=gen32"><div class="cap"><span class="n">gen32</span><span class="t">OTP confirm</span></div><div class="shot"><img loading="lazy" src="screens/gen32.png" alt="gen32 OTP confirm"></div></a>
+<a class="card" href="baseline.html?screen=gen33"><div class="cap"><span class="n">gen33</span><span class="t">Welcome</span></div><div class="shot"><img loading="lazy" src="screens/gen33.png" alt="gen33 Welcome"></div></a>
+<a class="card" href="baseline.html?screen=gen34"><div class="cap"><span class="n">gen34</span><span class="t">Consent request</span></div><div class="shot"><img loading="lazy" src="screens/gen34.png" alt="gen34 Consent request"></div></a>
+<a class="card" href="baseline.html?screen=gen35"><div class="cap"><span class="n">gen35</span><span class="t">Feature enroll</span></div><div class="shot"><img loading="lazy" src="screens/gen35.png" alt="gen35 Feature enroll"></div></a>
+</div>
+<h2 class="sec" id="deposits-loans-investing">Deposits, loans & investing <span>7 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen5"><div class="cap"><span class="n">gen5</span><span class="t">Deposit offers</span></div><div class="shot"><img loading="lazy" src="screens/gen5.png" alt="gen5 Deposit offers"></div></a>
+<a class="card" href="baseline.html?screen=gen36"><div class="cap"><span class="n">gen36</span><span class="t">Deposit details</span></div><div class="shot"><img loading="lazy" src="screens/gen36.png" alt="gen36 Deposit details"></div></a>
+<a class="card" href="baseline.html?screen=gen37"><div class="cap"><span class="n">gen37</span><span class="t">My loans</span></div><div class="shot"><img loading="lazy" src="screens/gen37.png" alt="gen37 My loans"></div></a>
+<a class="card" href="baseline.html?screen=gen38"><div class="cap"><span class="n">gen38</span><span class="t">Loan calculator</span></div><div class="shot"><img loading="lazy" src="screens/gen38.png" alt="gen38 Loan calculator"></div></a>
+<a class="card" href="baseline.html?screen=gen39"><div class="cap"><span class="n">gen39</span><span class="t">Investment</span></div><div class="shot"><img loading="lazy" src="screens/gen39.png" alt="gen39 Investment"></div></a>
+<a class="card" href="baseline.html?screen=gen40"><div class="cap"><span class="n">gen40</span><span class="t">Solvency</span></div><div class="shot"><img loading="lazy" src="screens/gen40.png" alt="gen40 Solvency"></div></a>
+<a class="card" href="baseline.html?screen=gen55"><div class="cap"><span class="n">gen55</span><span class="t">Explore features</span></div><div class="shot"><img loading="lazy" src="screens/gen55.png" alt="gen55 Explore features"></div></a>
+</div>
+<h2 class="sec" id="chat-support">Chat & support <span>3 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen41"><div class="cap"><span class="n">gen41</span><span class="t">Support chat list</span></div><div class="shot"><img loading="lazy" src="screens/gen41.png" alt="gen41 Support chat list"></div></a>
+<a class="card" href="baseline.html?screen=gen42"><div class="cap"><span class="n">gen42</span><span class="t">Chat</span></div><div class="shot"><img loading="lazy" src="screens/gen42.png" alt="gen42 Chat"></div></a>
+<a class="card" href="baseline.html?screen=gen43"><div class="cap"><span class="n">gen43</span><span class="t">Chat empty</span></div><div class="shot"><img loading="lazy" src="screens/gen43.png" alt="gen43 Chat empty"></div></a>
+</div>
+<h2 class="sec" id="search-filters">Search & filters <span>4 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen44"><div class="cap"><span class="n">gen44</span><span class="t">Search</span></div><div class="shot"><img loading="lazy" src="screens/gen44.png" alt="gen44 Search"></div></a>
+<a class="card" href="baseline.html?screen=gen45"><div class="cap"><span class="n">gen45</span><span class="t">Filter sheet</span></div><div class="shot"><img loading="lazy" src="screens/gen45.png" alt="gen45 Filter sheet"></div></a>
+<a class="card" href="baseline.html?screen=gen46"><div class="cap"><span class="n">gen46</span><span class="t">Advanced filter</span></div><div class="shot"><img loading="lazy" src="screens/gen46.png" alt="gen46 Advanced filter"></div></a>
+<a class="card" href="baseline.html?screen=gen47"><div class="cap"><span class="n">gen47</span><span class="t">No results</span></div><div class="shot"><img loading="lazy" src="screens/gen47.png" alt="gen47 No results"></div></a>
+</div>
+<h2 class="sec" id="codes-statements">Codes & statements <span>4 screens</span></h2><div class="grid">
+<a class="card" href="baseline.html?screen=gen48"><div class="cap"><span class="n">gen48</span><span class="t">Scan QR</span></div><div class="shot"><img loading="lazy" src="screens/gen48.png" alt="gen48 Scan QR"></div></a>
+<a class="card" href="baseline.html?screen=gen49"><div class="cap"><span class="n">gen49</span><span class="t">My QR</span></div><div class="shot"><img loading="lazy" src="screens/gen49.png" alt="gen49 My QR"></div></a>
+<a class="card" href="baseline.html?screen=gen50"><div class="cap"><span class="n">gen50</span><span class="t">Top up point</span></div><div class="shot"><img loading="lazy" src="screens/gen50.png" alt="gen50 Top up point"></div></a>
+<a class="card" href="baseline.html?screen=gen54"><div class="cap"><span class="n">gen54</span><span class="t">Get statement</span></div><div class="shot"><img loading="lazy" src="screens/gen54.png" alt="gen54 Get statement"></div></a>
+</div>
+</div><footer>Interactive mockups · Paysera · UIUX-390 preview</footer></body></html>
